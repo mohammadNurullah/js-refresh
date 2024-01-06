@@ -12,3 +12,38 @@ function myFunction(topic) {
 }
 myFunction("python");
 //console.log(name);
+
+//--FUNCTIONS--//
+
+// Regular Function or Traditional Function
+function regular() {
+  console.log("Hello World! from regular");
+}
+regular();
+
+// Function Expression
+const hello = function () {
+  console.log("Hello World! from expression");
+};
+hello();
+
+// Named Function Expression
+const namedFunc = function test() {
+  console.log("Hello World! from Named function");
+};
+hello();
+
+// Arrow Function
+const arrowFunc = () => {
+  console.log("Hello World! from Arrow function");
+};
+arrowFunc();
+
+// Anonymus Function
+const arwFn = () => {
+  return () => {
+    console.log("Hello World! from Anonymus function");
+  };
+};
+const res = arwFn();
+res();
