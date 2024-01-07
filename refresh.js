@@ -66,5 +66,65 @@ let arr2 = ["java", "cpp"];
 
 arr2 = arr1;
 arr1.push("Go");
-console.log(arr1);
-console.log(arr2);
+// console.log(arr1);
+// console.log(arr2);
+
+//--SPREAD & REST OPERATOR--//
+
+// let fruits = ["banana", "orange"];
+// let language = ["Js", "python"];
+
+// fruits = [...language];
+// language.push("java");
+
+// console.log(fruits);
+// console.log(language);
+
+let user = [
+  {
+    name: "Karim",
+  },
+  {
+    name: "Rahim",
+  },
+];
+
+let id = ["01", "02"];
+
+id = [...user];
+// console.log(id);
+// console.log(user);
+
+const sum = (text, ...rest) => {
+  const result = rest.reduce((total, curVal) => total + curVal, 0);
+  console.log(`${text} ${result}`);
+};
+// sum("The sum is =", 1, 2, 3, 4);
+
+const information = {
+  stdName: "Sakib",
+  madrasha: {
+    madrashaName: "Madinatul Ulum Kamil Madrasha",
+    language: {
+      // lang: "python",
+    },
+  },
+};
+
+// const { madrasha: { language: { lang } } = {} } = information;
+//console.log(information?.madrasha?.language?.lang); // optional chain
+
+//console.log(lang);
+
+//--TRUTHY & FALSY VALUE--//
+
+// false, 0, null, undefined, NaN, ''; js e eigula falsy value
+
+//--SHORT CIRCUITS OPERATOR--//
+
+// null & undefined
+
+let lan = "python";
+console.log(lan ?? "Js");
+console.log(lan || "Js");
+console.log(lan && "Js");
