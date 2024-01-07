@@ -125,6 +125,29 @@ const information = {
 // null & undefined
 
 let lan = "python";
-console.log(lan ?? "Js");
-console.log(lan || "Js");
-console.log(lan && "Js");
+// console.log(lan ?? "Js");
+// console.log(lan || "Js");
+// console.log(lan && "Js");
+
+//--ASYNCHRONUS DATA FETCHING--//
+
+async function getData() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/1"
+    );
+    const data = await response.json();
+
+    console.log(data?.title);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function somethingWork() {
+  return getData();
+}
+
+(async () => {
+  const apiResult = await somethingWork();
+})();
